@@ -1,0 +1,26 @@
+{
+  "name": "mongonewsscraper",
+  "version": "3.0.0",
+  "description": "third time's the charm",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/enigmatic-agent-scully/mongoNewsScraper.git"
+  },
+  "author": "aj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/enigmatic-agent-scully/mongoNewsScraper/issues"
+  },
+  "homepage": "https://github.com/enigmatic-agent-scully/mongoNewsScraper#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.16.4",
+    "morgan": "^1.9.1"
+  }
+}
