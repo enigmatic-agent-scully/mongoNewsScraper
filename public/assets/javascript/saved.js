@@ -22,10 +22,10 @@ $(document).ready(() => {
   };
 
   const createCard = article => {
-    var card = $("<div class='card'>");
-    var cardHeader = $("<div class='card-header'>").append(
+    var card = $(`<div class='card'>`);
+    var cardHeader = $(`<div class='card-header'>`).append(
       $('<h3>').append(
-        $("<a class='article-link' target='_blank' rel='noopener noreferrer'>")
+        $(`<a class='article-link' target='_blank' rel='noopener noreferrer'>`)
           .attr('href', article.link)
           .text(article.title),
         $("<a class='btn btn-danger delete'>Delete From Saved</a>"),
