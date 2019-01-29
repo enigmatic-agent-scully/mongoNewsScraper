@@ -10,15 +10,14 @@ var ArticleSchema = new Schema({
     type: String,
     required: true
   },
-  comments: [
-    {
-      text: String,
-      comment: {
-        type: Schema.Types.ObjectId,
-        ref: 'Comment'
-      }
-    }
-  ]
+  date: {
+    type: Date,
+    default: Date.now
+  },
+  saved: {
+    type: Boolean,
+    default: false
+  }
 });
 
 var Article = mongoose.model('Article', ArticleSchema);

@@ -1,16 +1,22 @@
-import express from 'express';
-import bodyParser from 'body-parser';
-import logger from 'morgan';
-import mongoose from 'mongoose';
-
-const port = 3001;
+const express = require('express');
+const bodyParser = require('body-parser');
+const logger = require('morgan');
+const exphbs = require('express-handlebars');
+const mongoose = require('mongoose');
+const port = process.env.PORT || 3001;
 const app = express();
 const db = mongoose.connection;
 const mongo_uri = process.env.MONGODB_URI || 'mongodb://localhost/mongoscraper';
+const routes = require('./routes');
 
 app.use(logger('dev'));
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.use(express.static('public'));
+app.use(routes);
+
+app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
+app.set('view engine', 'handlebars');
 
 mongoose.connect(
   mongo_uri,
